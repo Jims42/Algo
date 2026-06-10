@@ -12,11 +12,13 @@ async function main(){
     int = await clavier.question("Veuillez saisir le taux d'interêt de rémunération en %\n");
     N= await clavier.question("Veuillez saisir le nombre d'année pleine du placement\n");
 
-    let interetSimple = ((S*(1+N*(int/100)))-S).toFixed(2);
-    let interetCompose = ((S*(1+(int/100))**N)-S).toFixed(2);
+    let interetSimple = S*(1+N*(int/100));
+    let interetSimpleI=interetSimple-S;
+    let interetCompose = S*(1+(int/100))**N;
+    let interetComposeI=interetCompose-S;
 
-    console.log("votre capital placé à interêt simple au bout de "+N+" ans sera de "+interetSimple+" euros");
-    console.log("votre capital placé à interêt simple au bout de "+N+" ans sera de "+interetCompose+" euros");
+    console.log("votre capital placé à interêt simple au bout de "+N+" ans sera de "+interetSimpleI.toFixed(2)+" euros pour un total de : "+interetSimple.toFixed(2)+" €");
+    console.log("votre capital placé à interêt simple au bout de "+N+" ans sera de "+interetComposeI.toFixed(2)+" euros pour un total de : "+interetCompose.toFixed(2)+" €");
     clavier.close();
 
 

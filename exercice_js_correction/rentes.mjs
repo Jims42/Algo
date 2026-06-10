@@ -8,7 +8,7 @@ async function main() {
     await clavier.question("Quel montant voulez-vous placer ? \n"),
   );
 
-  const taux = 0.345;
+  const taux = 0.0345;
   let nbAnnee = parseInt(
     await clavier.question("Combien d'année vous placez cztte somme ?\n"),
   );
