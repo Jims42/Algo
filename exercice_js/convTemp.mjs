@@ -24,10 +24,29 @@ import { stdin as input, stdout as output } from "node:process";
 
 async function main() {
     const clavier = createInterface({ input, output });
-    
-let X=Number(await clavier.question("Entrez la valeur que vous voulez convertir : "));
+    let X=0;
+    let ques;
+ do{   
+X=Number(await clavier.question("Entrez la valeur que vous voulez convertir : "));
+if( X >= -459.67 && X <= 5000000){
+    ques=true;
+continue;
+}else{
+    console.log("ERRUR !!!\n Veuillez saisir une valeur comprise entre -459.67 et 5 000 000");
+    ques=false;
+}
+}while(ques=false);
+console.log(X);
+// let choix=parseInt(await clavier.question("<<Choix'1' >> convertion de 'Celcuis' ==> 'Farenheint' || << Choix '2' >> convertion fe 'Farenheint' ==> 'Celcuis'"));
+// if (choix===1){
+//     let ctof=(X*9/5)+32;
+//     console.log("")
+
+// }
+
 
 
     clavier.close();
 }
+
 await main();
