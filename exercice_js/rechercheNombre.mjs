@@ -63,7 +63,7 @@ async function main() {
       `Lnombre ${N} est dans le tableau à la position ${position} du tableau`,
     );
   } else {
-    console.log("404404 Not Found !");
+    console.log("404 Not Found !");
   }
   clavier.close();
 }

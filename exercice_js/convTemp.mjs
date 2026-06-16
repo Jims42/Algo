@@ -18,45 +18,65 @@
 // Saisir une température avec son unité de mesure (C ou F) :
 // 17 C
 // 17 °C = 62.6 °F
- 
+
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 
 async function main() {
-    const clavier = createInterface({ input, output });
-    let X=0;
-    let ques;
-    let unite;
- do{   
-X=Number(await clavier.question("Entrez la valeur que vous voulez convertir : "));
-if( X >= -459.67 && X <= 5000000){
-    ques=true;
-continue;
-}else{
-    console.log("ERRUR !!!\n Veuillez saisir une valeur comprise entre -459.67 et 5 000 000");
-    ques=false;
+  const clavier = createInterface({ input, output });
+  let X = 0;
+  let ques = false;
+  let unite;
+  let valeur;
+
+  do {
+    X = (
+      await clavier.question("Entrez la valeur que vous voulez convertir : ")
+    ).toUpperCase();
+    let saisie = X.match(/^(\d+)([a-zA-Z]+)$/);
+
+    if (saisie) {
+      valeur = saisie[1];
+      unite = saisie[2];
+    //   console.log(valeur);
+    //   console.log(unite);
+    //   console.log(saisie);
+    }
+    if (valeur >= -459.67 && valeur <= 5000000) {
+      ques = true;
+    } else {
+      console.log(
+        "ERRUR !!!\n Veuillez saisir une valeur comprise entre -459.67 et 5 000 000",
+      );
+      ques = false;
+    }
+    if (unite === "c" || unite === "C") {
+      console.log("Température = " + valeur + " " + unite.toUpperCase() + "°");
+    } else if (unite === "f" || unite === "F") {
+      console.log("Température = " + valeur + " " + unite.toUpperCase() + "°");
+    } else {
+      console.log(
+        ">>> ERREUR DE SAISIE <<<\nValeur non reconnu\nEntrez une unité validde !!! ",
+      );
+    }
+  } while ((ques = false));
+  if (unite === "f") {
+    unite == "C";
+    let fTOc = (((valeur - 32) * 5) / 9).toFixed(2);
+    console.log(
+      "la conversion en Celcius de " + X + "° est eqal à " + fTOc,
+      unite + "°",
+    );
+  }
+  if (unite === "c") {
+    unite = "F";
+    let cTOf = ((valeur * 9) / 5 + 32).toFixed(2);
+    console.log(
+      "la conversion en Celcius de " + X.toUpperCase() + "° est eqal à " + cTOf,
+      unite + "°",
+    );
+  }
+
+  clavier.close();
 }
-}while(ques=false);
-unite=await clavier.question("Définnisser l'untité entre Celcius<C> et Farenheit<F> : ");
-if(unite ==='c'|| unite==='C'){
-    console.log("Température = "+X+" "+unite.toUpperCase());
-}if (unite==='f'|| unite==='F') {
-    console.log("Température = "+X+" "+unite.toUpperCase());
-} else {
-    console.log("Entrez une unité validde !!! ");
-}
-
-console.log(X);
-// let choix=parseInt(await clavier.question("<<Choix'1' >> convertion de 'Celcuis' ==> 'Farenheint' || << Choix '2' >> convertion fe 'Farenheint' ==> 'Celcuis'"));
-// if (choix===1){
-//     let ctof=(X*9/5)+32;
-//     console.log("")
-
-// }
-
-
-
-    clavier.close();
-}
-
 await main();
