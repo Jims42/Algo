@@ -19,6 +19,17 @@ console.log("Courage, fini java , debut JS");
  console.log(user.nom);
  console.log(user.loisirs[0]);
  console.log(user.adresse.ville);
+ console.log("---------------");
+ for(const key in user){
+
+    console.log(key+" : " +user[key]);
+    if(key=='adresse'){
+        for(subkey in user[key]  )
+        {
+            console.log(subkey+" : "+user[key][subkey]);
+        }
+    }
+ }
 
 // Function to change the background color of the page
 function changeBackgroundColor(color) {

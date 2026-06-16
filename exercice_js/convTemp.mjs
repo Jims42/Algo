@@ -26,6 +26,7 @@ async function main() {
     const clavier = createInterface({ input, output });
     let X=0;
     let ques;
+    let unite;
  do{   
 X=Number(await clavier.question("Entrez la valeur que vous voulez convertir : "));
 if( X >= -459.67 && X <= 5000000){
@@ -36,6 +37,15 @@ continue;
     ques=false;
 }
 }while(ques=false);
+unite=await clavier.question("Définnisser l'untité entre Celcius<C> et Farenheit<F> : ");
+if(unite ==='c'|| unite==='C'){
+    console.log("Température = "+X+" "+unite.toUpperCase());
+}if (unite==='f'|| unite==='F') {
+    console.log("Température = "+X+" "+unite.toUpperCase());
+} else {
+    console.log("Entrez une unité validde !!! ");
+}
+
 console.log(X);
 // let choix=parseInt(await clavier.question("<<Choix'1' >> convertion de 'Celcuis' ==> 'Farenheint' || << Choix '2' >> convertion fe 'Farenheint' ==> 'Celcuis'"));
 // if (choix===1){
