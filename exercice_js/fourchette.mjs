@@ -10,8 +10,8 @@ async function main() {
   let compteur = 0;
   let trouve = false;
 
-  // N=(Math.random(0,100)*101).toFixed(0);
-  N = Math.floor(Math.random() * 101);
+  N=(Math.random(0,100)*101).toFixed(0);
+//   N = Math.floor(Math.random() * 101);
 
   do {
     choixNum = parseInt(
