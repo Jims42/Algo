@@ -33,14 +33,13 @@ async function main() {
     X = (
       await clavier.question("Entrez la valeur que vous voulez convertir : ")
     ).toUpperCase();
+   
     let saisie = X.match(/^(\d+)([a-zA-Z]+)$/);
 
     if (saisie) {
       valeur = saisie[1];
       unite = saisie[2];
-    //   console.log(valeur);
-    //   console.log(unite);
-    //   console.log(saisie);
+   
     }
     if (valeur >= -459.67 && valeur <= 5000000) {
       ques = true;
@@ -50,17 +49,9 @@ async function main() {
       );
       ques = false;
     }
-    if (unite === "c" || unite === "C") {
-      console.log("Température = " + valeur + " " + unite.toUpperCase() + "°");
-    } else if (unite === "f" || unite === "F") {
-      console.log("Température = " + valeur + " " + unite.toUpperCase() + "°");
-    } else {
-      console.log(
-        ">>> ERREUR DE SAISIE <<<\nValeur non reconnu\nEntrez une unité validde !!! ",
-      );
-    }
+   
   } while ((ques = false));
-  if (unite === "f") {
+  if (unite === "F") {
     unite == "C";
     let fTOc = (((valeur - 32) * 5) / 9).toFixed(2);
     console.log(
@@ -68,7 +59,7 @@ async function main() {
       unite + "°",
     );
   }
-  if (unite === "c") {
+  if (unite === "C") {
     unite = "F";
     let cTOf = ((valeur * 9) / 5 + 32).toFixed(2);
     console.log(
