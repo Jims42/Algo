@@ -16,16 +16,15 @@ async function main() {
         }
     }
 
-    // Efface un peu l'écran pour cacher le mot au Joueur 2
+    
     console.clear(); 
 
-    // 2. Préparation de l'affichage (ex: "B _ _ _ _ N")
     let affichage = [];
     for (let i = 0; i < mot.length; i++) {
         if (i === 0 || i === mot.length - 1) {
-            affichage.push(mot[i]); // Première et dernière lettre visibles
+            affichage.push(mot[i]); 
         } else {
-            affichage.push("_"); // Le reste est caché
+            affichage.push("_"); 
         }
     }
 
@@ -78,13 +77,13 @@ async function main() {
             console.log("Bien joué !");
         }
 
-        // Vérification si le mot est entièrement découvert
+        
         if (!affichage.includes("_")) {
             motTrouve = true;
         }
     }
 
-    // 4. Fin de la partie
+    
     console.log("\n-----------------------------");
     if (motTrouve) {
         console.log("BRAVO ! Vous avez gagné !");

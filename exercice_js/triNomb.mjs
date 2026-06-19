@@ -57,14 +57,33 @@ if (!echange)
 
     }
   }
-  function tabaffichage(tab){
-    console.log("========================================================================================================");
+//   function tabaffichage(tab){
+//     console.log("========================================================================================================");
    
-        console.log(tab.join(" || "));
+//         console.log(tab.join(" || "));
     
-     console.log("========================================================================================================");
-  }
+//      console.log("========================================================================================================");
+//   }
+function tabaffichage(tab) {
+    // 1. Trouver la longueur du nombre le plus long dans le tableau
+    // On transforme les nombres en chaînes pour mesurer leur .length
+    let maxLongueur = Math.max(...tab.map(num => num.toString().length));
 
+    // 2. Transformer chaque élément pour qu'il ait la même largeur
+    // padStart(maxLongueur, " ") ajoute des espaces au début pour atteindre la taille max
+    let tabFormate = tab.map(num => num.toString().padStart(maxLongueur, " "));
+
+    // 3. Créer la ligne de contenu
+    let ligneContenu = tabFormate.join(" || ");
+
+    // 4. Rendre les lignes de séparation ("===") dynamiques selon la taille de la ligne de contenu
+    let separateur = "=".repeat(ligneContenu.length);
+
+    // 5. Affichage
+    console.log(separateur);
+    console.log(ligneContenu);
+    console.log(separateur);
+}
 
     clavier.close();
 }
