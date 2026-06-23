@@ -16,18 +16,19 @@ async function main() {
     let phraseMaj=phrase.toUpperCase();
     for (let i=0;i<phraseMaj.length;i++){
         let c=phraseMaj.charAt(i);
-        console.log(c+" ");
+        // console.log(c+" ");
         if(c>='A' && c<='Z'){
             let index=c-'A';
             occurence[index]++;
         }
     }
-    console.log("\n--- Résultat du dénombrement ---");
-    for (let n = 0; n < occurence.length; n++) {
-        let lettre=n+'A';
-        console.log(`Lette ${lettre} : ${occurence} fois`);
+   
         
     }
+    console.log("\n--- Résultat du dénombrement ---");
+     for (let n = 0; n < occurence.length; n++) {
+        let lettre= n+'A';
+        console.log(`Lette ${lettre} : ${occurence} fois`);
 
 
 
