@@ -30,6 +30,23 @@ async function main() {
 // const database = employes.data.map(emp => emp.employee_name);
 console.log(database);
 console.table(database);
+
+// name=[sep[0][0],sep[1]]; <===> name=[sep[0].charAt(0),sep[1]];
+function convMail(value){
+let mail;
+for (let j = 0; j < database.length; j++) {
+    const sep=database[j].employee_name.split(' ');
+    // const prenom=sep[0].toLowerCase();
+    // const nom=sep[1].toLowerCase(); 
+    mail=sep[0][0].toLowerCase()+"."+sep[1].toLowerCase()+"@gamil.com";
+     console.log(mail);
+}
+}
+ let sicheEmplyes
+
+
+
+
   clavier.close();
 }
 await main();
