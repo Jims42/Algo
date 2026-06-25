@@ -69,7 +69,7 @@ let hotmail;
 let sep; //sep=separtion du (exemple prenom et nom )
 sep=personneList.split(" ");
 tabmail=sep[0][0].toLowerCase()+"."+sep[1].toLowerCae()+"gmail.com";
-console.log(hotmail); //affichage : "jprovent@gmail.com"
+console.log(hotmail); //affichage : "j.provent@gmail.com"
 ```
 `[sep[0][0],sep[1]]` est equivalent à `[sep[0].charAt(0),sep[1]]`
 
