@@ -1,5 +1,14 @@
-## 1. REGEX
+# 📚 Mémo Java
+
+## 📌 Sommaire
+* [regex](#1-REGEX)
+* [split()](#2-split())
+
+
 ---
+
+# 1. REGEX
+
 ```js
 regex=/^\.+$/
 regex.test(phrase)
@@ -49,3 +58,18 @@ if (phrase.match(regex)) {
 ```
 
 > **Conseil de performance :** Si vous voulez juste vérifier si une chaîne respecte un format (sans récupérer le texte trouvé), utilisez toujours **`regex.test()`**. C'est plus rapide et plus léger en mémoire.
+
+---
+
+# 2. split()
+
+```javascript
+let personneList='Jerome Provent'
+let hotmail;
+let sep; //sep=separtion du (exemple prenom et nom )
+sep=personneList.split(" ");
+tabmail=sep[0][0].toLowerCase()+"."+sep[1].toLowerCae()+"gmail.com";
+console.log(hotmail); //affichage : "j.provent@gmail.com"
+```
+`[sep[0][0],sep[1]]` est equivalent à `[sep[0].charAt(0),sep[1]]`
+
