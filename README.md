@@ -2,7 +2,7 @@
 
 ## 📌 Sommaire
 * [regex](#1-REGEX)
-* [split](#2-split())
+* [split()](#2-split())
 
 
 ---
