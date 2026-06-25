@@ -2,7 +2,7 @@
 
 ## 📌 Sommaire
 * [regex](#1-REGEX)
-* [split()](#2-split())
+* [split()](#2-Split())
 
 
 ---
@@ -61,7 +61,7 @@ if (phrase.match(regex)) {
 
 ---
 
-# 2. split()
+# 2. Split()
 
 ```javascript
 let personneList='Jerome Provent'
