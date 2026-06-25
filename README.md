@@ -61,7 +61,7 @@ if (phrase.match(regex)) {
 
 ---
 
-# 1. SPLIT()
+# 2. SPLIT()
 
 ```javascript
 let personneList='Jerome Provent'
