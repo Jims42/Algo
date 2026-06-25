@@ -8,7 +8,7 @@
 ---
 
 # 1. REGEX
----
+
 ```js
 regex=/^\.+$/
 regex.test(phrase)
