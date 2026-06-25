@@ -1,6 +1,6 @@
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
-// import employes from "https://arfp.github.io/tp/web/javascript2/03-employees/employees.json" with { type: "json" };
+// import employes from "https:\\arfp.github.io/tp/web/javascript2/03-employees/employees.json" with { type: "json" };
 async function main() {
   const clavier = createInterface({ input, output });
 
@@ -30,26 +30,18 @@ async function main() {
   // console.log(database);
   console.table(database);
 
-  // name=[sep[0][0],sep[1]]; <===> name=[sep[0].charAt(0),sep[1]];
-  function convMail(n) {
-    let tabmail;
-
-    let sep = database[n].employee_name.split(" ");
-
-    tabmail =
-      sep[0][0].toLowerCase() + "." + sep[1].toLowerCase() + "@gamil.com";
-    //  console.log(mail);
-    return tabmail;
-  }
+ 
+  
   let tabFinal = [];
   
   for (let n = 0; n < database.length; n++) {
     let ficheEmployes = {
       id: database[n].id,
       full_name: database[n].employee_name,
-      email: convMail(n),
-      income_monthly: database[n].employee_salary,
-      year_of_birth: database[n].employee_age,
+      // email: convMail(n),
+      email: convMail(database[n].employee_name),
+      income_monthly: ((database[n].employee_salary)/12).toFixed(0),
+      year_of_birth: (new Date().getFullYear())-database[n].employee_age,
     };
     tabFinal.push(ficheEmployes);
   }
@@ -57,4 +49,15 @@ async function main() {
 
   clavier.close();
 }
+function convMail(n) {
+    let tabmail;
+    // let sep = database[n].employee_name.split(" ");
+    let sep = n.split(" ");
+    tabmail =
+      sep[0][0].toLowerCase() + "." + sep[1].toLowerCase() + "@gamil.com";
+    //  console.log(tabmail);
+    return tabmail;
+    }
+ 
+
 await main();
